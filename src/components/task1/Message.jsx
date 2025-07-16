@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import like from "../../assets/like.png";
+import dislike from "../../assets/dislike.png";
 export default function Message({ text, index }) {
   const [likesCounter, setLikeCounter] = useState(0);
   const [dislikesCounter, setDislikeCounter] = useState(0);
@@ -12,22 +13,14 @@ export default function Message({ text, index }) {
           className="reaction-button"
           onClick={() => setLikeCounter((prev) => prev + 1)}
         >
-          <img
-            src="src/assets/free-icon-thumb-up-17350216.png"
-            className="reaction"
-            alt="Like"
-          />
+          <img src={like} className="reaction" alt="Like" />
         </button>
         <span>{likesCounter}</span>
         <button
           className="reaction-button"
           onClick={() => setDislikeCounter((prev) => prev + 1)}
         >
-          <img
-            src="src/assets/free-icon-thumb-down-2717402.png"
-            className="reaction"
-            alt="Dislike"
-          />
+          <img src={dislike} className="reaction" alt="Dislike" />
         </button>
         <span>{dislikesCounter}</span>
       </div>
